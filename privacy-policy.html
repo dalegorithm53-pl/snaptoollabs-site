@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SnapToolApps</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f7f7f8;
+      --border: #e5e5e7;
+      --text-primary: #111111;
+      --text-secondary: #555558;
+      --text-muted: #8a8a8e;
+      --accent: #5b6af9;
+      --accent-hover: #4455f0;
+      --accent-bg: #eef0ff;
+      --nav-bg: rgba(255,255,255,0.85);
+      --badge-bg: #f0f0f5;
+      --badge-text: #444450;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --radius: 10px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111113;
+        --bg-secondary: #1a1a1e;
+        --border: #2a2a2e;
+        --text-primary: #ededef;
+        --text-secondary: #a0a0a8;
+        --text-muted: #606068;
+        --accent: #7b8cff;
+        --accent-hover: #8f9fff;
+        --accent-bg: #1a1d3a;
+        --nav-bg: rgba(17,17,19,0.88);
+        --badge-bg: #222228;
+        --badge-text: #a0a0aa;
+        --shadow: 0 1px 3px rgba(0,0,0,0.3);
+        --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand .logo-mark {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #5b6af9 0%, #9b6aff 100%);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent); font-weight: 500; }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 24px 100px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .page-wrapper {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 80px;
+        gap: 32px;
+      }
+    }
+
+    /* ── TOC SIDEBAR ── */
+    .toc {
+      position: sticky;
+      top: 72px;
+    }
+    .toc-title {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li + li { margin-top: 2px; }
+    .toc-list a {
+      display: block;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s;
+      line-height: 1.45;
+    }
+    .toc-list a:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    @media (max-width: 720px) { .toc { display: none; } }
+
+    /* ── HEADER ── */
+    .doc-header { margin-bottom: 48px; }
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .doc-badge svg { width: 12px; height: 12px; flex-shrink: 0; }
+    h1 {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+    .doc-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ── CONTENT ── */
+    .content section {
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    .content section:first-of-type {
+      padding-top: 0;
+      border-top: none;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    p { color: var(--text-secondary); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol {
+      color: var(--text-secondary);
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      display: flex;
+      gap: 14px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin: 20px 0;
+    }
+    .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.6; }
+    .callout p { margin: 0; font-size: 14px; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .highlight-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .highlight-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .highlight-card .label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .highlight-card .desc { font-size: 12.5px; color: var(--text-muted); margin: 0; }
+
+    /* ── TABLE ── */
+    .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th {
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 11.5px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 14px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+    footer p { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    footer p:last-child { margin-bottom: 0; }
+    footer a { color: var(--accent); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-links a { font-size: 13px; color: var(--text-secondary); }
+    .footer-links a:hover { color: var(--text-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">
+      <span class="logo-mark">S</span>
+      SnapToolApps
+    </a>
+    <ul class="nav-links">
+      <li><a href="privacy-policy.html" class="active">Privacy</a></li>
+      <li><a href="terms-of-service.html">Terms</a></li>
+      <li><a href="cookie-policy.html">Cookies</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <!-- Sidebar TOC -->
+  <aside class="toc" aria-label="Table of contents">
+    <p class="toc-title">On this page</p>
+    <ul class="toc-list">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data We Collect</a></li>
+      <li><a href="#local-processing">Local Processing</a></li>
+      <li><a href="#how-we-use-data">How We Use Data</a></li>
+      <li><a href="#sharing">Sharing & Disclosure</a></li>
+      <li><a href="#cookies-storage">Cookies & Storage</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#gdpr">GDPR (EEA/UK)</a></li>
+      <li><a href="#ccpa">CCPA (California)</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content" id="main">
+    <header class="doc-header">
+      <div class="doc-badge">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12a11.955 11.955 0 00-.598-6H12a11.958 11.958 0 01-3-.286z"/></svg>
+        Legal Document
+      </div>
+      <h1>Privacy Policy</h1>
+      <div class="doc-meta">
+        <span>📅 Last updated: February 2026</span>
+        <span>🏢 SnapTool Labs (a DBA of Redan Ventures LLC)</span>
+        <span>🌐 SnapToolApps</span>
+      </div>
+    </header>
+
+    <!-- Overview -->
+    <section id="overview">
+      <h2>Overview</h2>
+      <div class="callout">
+        <span class="callout-icon">🔒</span>
+        <p><strong>Plain-language summary:</strong> SnapToolApps extensions and tools are designed with privacy by default. Most processing happens entirely on your device. We do not sell your data, and we collect the minimum information necessary to provide and improve our services.</p>
+      </div>
+      <p>This Privacy Policy describes how <strong>Redan Ventures LLC, doing business as SnapTool Labs</strong>, located at <strong>[ENTITY_ADDRESS]</strong> ("we," "our," or "us"), collects, uses, and protects information when you use our browser extensions, web tools, and related software products (collectively, the "Services").</p>
+      <p>By using our Services, you agree to the practices described in this policy. If you do not agree, please discontinue use and uninstall any extensions.</p>
+
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <div class="icon">💻</div>
+          <div class="label">Client-Side First</div>
+          <p class="desc">OCR, PDF, and document tools run entirely in your browser — nothing is uploaded.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🚫</div>
+          <div class="label">No Data Sales</div>
+          <p class="desc">We never sell, rent, or trade your personal information to third parties.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">📊</div>
+          <div class="label">Minimal Analytics</div>
+          <p class="desc">Only aggregate, anonymized usage counts if analytics are enabled — never content.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🛡️</div>
+          <div class="label">GDPR &amp; CCPA Ready</div>
+          <p class="desc">Rights-first design for users in Europe and California.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Collected -->
+    <section id="data-collected">
+      <h2>Data We Collect</h2>
+      <p>We collect only what is necessary to operate our Services. The information we may collect falls into two categories:</p>
+
+      <h3>1. Information You Provide Directly</h3>
+      <ul>
+        <li><strong>Account information</strong> (if you create an account): email address and chosen display name.</li>
+        <li><strong>Support communications:</strong> any information you include when contacting <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>.</li>
+        <li><strong>Payment information:</strong> processed entirely by our third-party payment processor (e.g., Stripe). We never store full card numbers or bank details.</li>
+      </ul>
+
+      <h3>2. Information Collected Automatically</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>What We Collect</th>
+              <th>Purpose</th>
+              <th>Shared?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Extension usage events</td>
+              <td>Feature interaction counts (e.g., "OCR used"), anonymized and aggregated</td>
+              <td>Product improvement</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Error / crash logs</td>
+              <td>Stack traces without document content or PII</td>
+              <td>Bug fixing</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Extension version &amp; browser type</td>
+              <td>Browser and OS version string</td>
+              <td>Compatibility support</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Document content</td>
+              <td><strong>Not collected.</strong> All OCR, PDF, and document processing is client-side only.</td>
+              <td>N/A</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We do <strong>not</strong> collect browsing history, page content, keystrokes, screenshots, or any documents you process with our tools.</p>
+    </section>
+
+    <!-- Local Processing -->
+    <section id="local-processing">
+      <h2>Local Processing</h2>
+      <div class="callout">
+        <span class="callout-icon">💡</span>
+        <p>Our core tools — including OCR (optical character recognition), PDF manipulation, and document conversion — operate entirely within your browser using client-side JavaScript and WebAssembly. <strong>No document content ever leaves your device.</strong></p>
+      </div>
+      <p>This architecture means:</p>
+      <ul>
+        <li>Files you open or drag into our extensions are read by your local browser — not uploaded to any server.</li>
+        <li>Extracted text, converted files, and processed output are generated and stored locally in your browser session.</li>
+        <li>Closing the extension or clearing your browser data removes any locally cached content.</li>
+        <li>We have no technical capability to access documents you process, because they never reach our infrastructure.</li>
+      </ul>
+      <p>Where cloud-assisted features are offered in the future (e.g., sync or backup), they will be clearly labeled, opt-in, and described separately in an updated policy.</p>
+    </section>
+
+    <!-- How We Use Data -->
+    <section id="how-we-use-data">
+      <h2>How We Use Data</h2>
+      <p>We use the limited information we collect for the following purposes:</p>
+      <ul>
+        <li><strong>Providing the Services:</strong> authenticating accounts, managing subscriptions, and delivering features.</li>
+        <li><strong>Improving the Services:</strong> understanding which features are used most to guide product development (using aggregated, anonymized analytics only).</li>
+        <li><strong>Customer support:</strong> responding to inquiries and resolving issues.</li>
+        <li><strong>Security and fraud prevention:</strong> detecting misuse and protecting the integrity of the Services.</li>
+        <li><strong>Legal compliance:</strong> meeting obligations under applicable laws.</li>
+        <li><strong>Communications:</strong> sending transactional emails (account confirmation, receipts) and, with your consent, product updates. You may opt out of marketing communications at any time.</li>
+      </ul>
+      <p>We do not use your data for advertising, profiling, or automated decision-making that has legal or similarly significant effects on you.</p>
+    </section>
+
+    <!-- Sharing -->
+    <section id="sharing">
+      <h2>Sharing &amp; Disclosure</h2>
+      <p>We do not sell, rent, or trade your personal information. We share data only in limited, necessary circumstances:</p>
+
+      <h3>Service Providers</h3>
+      <p>We may share minimal data with trusted vendors who help us operate the Services (e.g., payment processors, email delivery services, hosting providers). These providers are contractually bound to process data only for the purposes we specify and to maintain appropriate security.</p>
+
+      <h3>Legal Requirements</h3>
+      <p>We may disclose information if required by law, subpoena, or other legal process, or if we believe in good faith that disclosure is necessary to protect our rights, prevent fraud, or protect the safety of users or others.</p>
+
+      <h3>Business Transfers</h3>
+      <p>In the event of a merger, acquisition, or sale of assets, personal data may be transferred as part of that transaction. We will provide notice before such a transfer and before data becomes subject to a different privacy policy.</p>
+
+      <h3>Aggregated / Anonymized Data</h3>
+      <p>We may share aggregate, non-identifiable statistics about our Services (e.g., "10,000 PDFs processed this month") publicly or with partners. This data cannot be used to identify individual users.</p>
+    </section>
+
+    <!-- Cookies & Storage -->
+    <section id="cookies-storage">
+      <h2>Cookies &amp; Local Storage</h2>
+      <p>Our browser extensions do not place traditional web cookies on external sites. Instead, they use browser-native storage mechanisms:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Storage Type</th>
+              <th>Data Stored</th>
+              <th>Controlled By</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>chrome.storage.local</code></td>
+              <td>User preferences, settings, license status</td>
+              <td>User (clearable via browser settings)</td>
+            </tr>
+            <tr>
+              <td><code>chrome.storage.sync</code></td>
+              <td>Synced preferences across devices (if signed into Chrome)</td>
+              <td>Google account sync / User</td>
+            </tr>
+            <tr>
+              <td>IndexedDB / localStorage</td>
+              <td>Temporary processing cache; cleared on session end</td>
+              <td>User (clearable via browser settings)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Our marketing website (if applicable) may use cookies for analytics and session management. A cookie consent banner will be presented where required by law. You can manage or revoke cookie consent at any time via the banner or your browser settings.</p>
+      <p>For more detail, see our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+    </section>
+
+    <!-- Retention -->
+    <section id="retention">
+      <h2>Data Retention</h2>
+      <p>We retain personal data only as long as necessary for the purposes described in this policy:</p>
+      <ul>
+        <li><strong>Account data:</strong> retained while your account is active and for up to 90 days after deletion to allow for account recovery.</li>
+        <li><strong>Support communications:</strong> retained for up to 3 years for quality assurance and legal purposes.</li>
+        <li><strong>Payment records:</strong> retained for up to 7 years as required by financial regulations.</li>
+        <li><strong>Analytics data:</strong> retained in aggregated, anonymized form indefinitely; raw event logs (if any) are purged after 90 days.</li>
+        <li><strong>Local extension data:</strong> stored on your device only; removed when you uninstall the extension or clear browser storage.</li>
+      </ul>
+      <p>To request deletion of your account and associated data, contact us at <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>.</p>
+    </section>
+
+    <!-- Security -->
+    <section id="security">
+      <h2>Security</h2>
+      <p>We implement technical and organizational measures appropriate to the risk of processing your personal information, including:</p>
+      <ul>
+        <li>Encryption in transit (TLS/HTTPS) for all data transmitted between your browser and our servers.</li>
+        <li>Encryption at rest for stored personal data and credentials.</li>
+        <li>Minimal data collection by design — we cannot lose data we never collected.</li>
+        <li>Access controls limiting internal access to personal data on a need-to-know basis.</li>
+        <li>Regular review of our security practices.</li>
+      </ul>
+      <p>No method of transmission or storage is 100% secure. In the event of a data breach that affects your rights, we will notify affected users and relevant authorities as required by law.</p>
+    </section>
+
+    <!-- GDPR -->
+    <section id="gdpr">
+      <h2>GDPR — EEA &amp; UK Users</h2>
+      <div class="callout">
+        <span class="callout-icon">🇪🇺</span>
+        <p>If you are located in the European Economic Area, United Kingdom, or Switzerland, you have additional rights under the General Data Protection Regulation (GDPR) or equivalent applicable law.</p>
+      </div>
+
+      <h3>Legal Basis for Processing</h3>
+      <p>We process personal data under the following legal bases:</p>
+      <ul>
+        <li><strong>Contract performance:</strong> processing necessary to provide the Services you've requested (Art. 6(1)(b) GDPR).</li>
+        <li><strong>Legitimate interests:</strong> improving our Services, preventing fraud, and maintaining security (Art. 6(1)(f) GDPR).</li>
+        <li><strong>Consent:</strong> for marketing communications and non-essential analytics, where we have obtained your explicit consent (Art. 6(1)(a) GDPR).</li>
+        <li><strong>Legal obligation:</strong> compliance with applicable laws (Art. 6(1)(c) GDPR).</li>
+      </ul>
+
+      <h3>Your Rights</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access:</strong> request a copy of the personal data we hold about you.</li>
+        <li><strong>Rectification:</strong> request correction of inaccurate or incomplete data.</li>
+        <li><strong>Erasure ("right to be forgotten"):</strong> request deletion of your personal data in certain circumstances.</li>
+        <li><strong>Restriction:</strong> request that we limit how we process your data.</li>
+        <li><strong>Portability:</strong> receive your data in a structured, machine-readable format.</li>
+        <li><strong>Object:</strong> object to processing based on legitimate interests or for direct marketing.</li>
+        <li><strong>Withdraw consent:</strong> where processing is based on consent, withdraw it at any time without affecting prior lawfulness.</li>
+        <li><strong>Lodge a complaint:</strong> file a complaint with your local data protection supervisory authority.</li>
+      </ul>
+
+      <h3>Data Transfers</h3>
+      <p>If we transfer personal data outside the EEA/UK, we ensure appropriate safeguards are in place (e.g., Standard Contractual Clauses or adequacy decisions). Where applicable, transfers to the United States are made under recognized legal mechanisms.</p>
+
+      <p>To exercise any of these rights, contact us at <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>. We will respond within 30 days.</p>
+    </section>
+
+    <!-- CCPA -->
+    <section id="ccpa">
+      <h2>CCPA — California Residents</h2>
+      <div class="callout">
+        <span class="callout-icon">🌴</span>
+        <p>If you are a California resident, the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA), grants you additional rights regarding your personal information.</p>
+      </div>
+
+      <h3>Your California Rights</h3>
+      <ul>
+        <li><strong>Right to Know:</strong> request disclosure of the categories and specific pieces of personal information we collect, use, disclose, or sell.</li>
+        <li><strong>Right to Delete:</strong> request deletion of your personal information, subject to certain exceptions.</li>
+        <li><strong>Right to Correct:</strong> request correction of inaccurate personal information.</li>
+        <li><strong>Right to Opt-Out of Sale/Sharing:</strong> we do not sell or share personal information for cross-context behavioral advertising. No opt-out action is required, but you may contact us to confirm.</li>
+        <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> we do not process sensitive personal information beyond what is necessary to provide the Services.</li>
+        <li><strong>Right to Non-Discrimination:</strong> we will not discriminate against you for exercising any of these rights.</li>
+      </ul>
+
+      <h3>Submitting a CCPA Request</h3>
+      <p>To submit a verifiable consumer request, email <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a> with the subject line "CCPA Request." We will respond within 45 days. You may submit up to two requests per 12-month period at no charge.</p>
+
+      <h3>Categories of Personal Information Collected (Last 12 Months)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>Collected?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Identifiers</td><td>Email address, account ID</td><td>Yes (if account created)</td></tr>
+            <tr><td>Commercial information</td><td>Purchase history, subscription tier</td><td>Yes</td></tr>
+            <tr><td>Internet / electronic activity</td><td>Feature usage events (anonymized)</td><td>Limited</td></tr>
+            <tr><td>Geolocation data</td><td>Precise location</td><td>No</td></tr>
+            <tr><td>Sensory / biometric data</td><td>Audio, visual, biometric</td><td>No</td></tr>
+            <tr><td>Professional / employment info</td><td>Occupation</td><td>No</td></tr>
+            <tr><td>Inferences from personal info</td><td>Profiles or preferences</td><td>No</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Children -->
+    <section id="children">
+      <h2>Children's Privacy</h2>
+      <p>Our Services are not directed to children under the age of 13 (or 16 in the EEA). We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately at <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a> and we will promptly delete it.</p>
+    </section>
+
+    <!-- Changes -->
+    <section id="changes">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will:</p>
+      <ul>
+        <li>Update the "Last updated" date at the top of this page.</li>
+        <li>Provide notice through the extension, our website, or email (for registered users) at least 14 days before changes take effect.</li>
+        <li>In cases of significant changes, request fresh consent where legally required.</li>
+      </ul>
+      <p>Continued use of the Services after the effective date constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have questions, concerns, or requests related to this Privacy Policy or your personal data, please reach out:</p>
+      <div class="callout">
+        <span class="callout-icon">✉️</span>
+        <p>
+          <strong>SnapTool Labs</strong> (a DBA of Redan Ventures LLC)<br />
+          [ENTITY_ADDRESS]<br />
+          Email: <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>
+        </p>
+      </div>
+      <p>We aim to respond to all privacy-related inquiries within 5 business days, and to fulfill data rights requests within the legally required timeframe (typically 30–45 days).</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:snap.tool.labs@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 SnapTool Labs (a DBA of Redan Ventures LLC). All rights reserved.</p>
+    <p>Last updated: February 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>

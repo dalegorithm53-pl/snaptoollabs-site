@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy — SnapToolApps</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f7f7f8;
+      --border: #e5e5e7;
+      --text-primary: #111111;
+      --text-secondary: #555558;
+      --text-muted: #8a8a8e;
+      --accent: #5b6af9;
+      --accent-bg: #eef0ff;
+      --nav-bg: rgba(255,255,255,0.85);
+      --radius: 10px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111113;
+        --bg-secondary: #1a1a1e;
+        --border: #2a2a2e;
+        --text-primary: #ededef;
+        --text-secondary: #a0a0a8;
+        --text-muted: #606068;
+        --accent: #7b8cff;
+        --accent-bg: #1a1d3a;
+        --nav-bg: rgba(17,17,19,0.88);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand .logo-mark {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #5b6af9 0%, #9b6aff 100%);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent); font-weight: 500; }
+
+    /* Single-column centered layout for short document */
+    .page-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 100px;
+    }
+    @media (max-width: 600px) {
+      .page-wrapper { padding: 40px 20px 80px; }
+    }
+
+    .doc-header { margin-bottom: 48px; }
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+    .doc-meta span { display: flex; align-items: center; gap: 5px; }
+
+    .content section {
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+    }
+    .content section:first-of-type {
+      padding-top: 0;
+      border-top: none;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+    p { color: var(--text-secondary); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    ul { color: var(--text-secondary); padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text-primary); font-weight: 600; }
+    code {
+      font-family: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+      font-size: 12.5px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      color: var(--text-primary);
+    }
+
+    .callout {
+      display: flex;
+      gap: 14px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin: 20px 0;
+    }
+    .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.6; }
+    .callout p { margin: 0; font-size: 14px; }
+
+    /* Storage item cards */
+    .storage-grid { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+    .storage-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      align-items: start;
+    }
+    .storage-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .storage-info .name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .storage-info .name code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .storage-info .desc { font-size: 13.5px; color: var(--text-secondary); margin: 0 0 6px 0; }
+    .storage-info .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+    .tag.safe { border-color: #22c55e; color: #16a34a; background: #f0fdf4; }
+    @media (prefers-color-scheme: dark) {
+      .tag.safe { border-color: #16a34a; color: #86efac; background: #0a1f0e; }
+    }
+
+    /* How to clear steps */
+    .steps { list-style: none; padding: 0; counter-reset: steps; }
+    .steps li {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      counter-increment: steps;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(steps);
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .steps li span { font-size: 14px; color: var(--text-secondary); }
+    .steps li strong { color: var(--text-primary); }
+
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 760px; margin: 0 auto; }
+    footer p { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    footer p:last-child { margin-bottom: 0; }
+    footer a { color: var(--accent); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-links a { font-size: 13px; color: var(--text-secondary); }
+    .footer-links a:hover { color: var(--text-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">
+      <span class="logo-mark">S</span>
+      SnapToolApps
+    </a>
+    <ul class="nav-links">
+      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="terms-of-service.html">Terms</a></li>
+      <li><a href="cookie-policy.html" class="active">Cookies</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <header class="doc-header">
+    <div class="doc-badge">🍪 Legal Document</div>
+    <h1>Cookie &amp; Storage Policy</h1>
+    <div class="doc-meta">
+      <span>📅 Last updated: February 2026</span>
+      <span>🏢 SnapTool Labs (a DBA of Redan Ventures LLC)</span>
+      <span>🌐 SnapToolApps</span>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <!-- Overview -->
+    <section id="overview">
+      <h2>Overview</h2>
+      <div class="callout">
+        <span class="callout-icon">💡</span>
+        <p><strong>Short version:</strong> SnapToolApps browser extensions do not drop tracking cookies. They use browser-native storage to save your settings and license status locally on your device — nothing is shared with advertisers.</p>
+      </div>
+      <p>This Cookie &amp; Storage Policy explains how <strong>Redan Ventures LLC, doing business as SnapTool Labs</strong>, uses browser storage mechanisms across its extensions and web properties. Unlike traditional websites that rely heavily on HTTP cookies, our extensions primarily use Chrome's built-in storage APIs and browser-native mechanisms.</p>
+    </section>
+
+    <!-- What's Different About Extensions -->
+    <section id="extensions">
+      <h2>Browser Extensions vs. Websites</h2>
+      <p>Browser extensions operate in a sandboxed environment separate from web pages. This means:</p>
+      <ul>
+        <li>Extensions <strong>cannot read or write cookies on websites you visit</strong> unless the extension has been granted explicit permission to do so (and SnapToolApps extensions do not request this permission).</li>
+        <li>Extension storage is <strong>isolated from websites</strong> — no website can read data stored by our extensions.</li>
+        <li>Extension storage persists until you clear browser data or uninstall the extension.</li>
+        <li>We do <strong>not</strong> use third-party tracking, analytics cookies, or advertising pixels in our extensions.</li>
+      </ul>
+    </section>
+
+    <!-- Storage Used -->
+    <section id="storage-used">
+      <h2>Storage We Use</h2>
+      <p>Here is every storage mechanism used by SnapToolApps extensions and the data stored in each:</p>
+
+      <div class="storage-grid">
+
+        <div class="storage-item">
+          <div class="storage-icon">⚙️</div>
+          <div class="storage-info">
+            <p class="name"><code>chrome.storage.local</code></p>
+            <p class="desc">Stores your extension preferences (theme, layout, feature toggles), Pro license status, and usage counters for free-tier limits. Data is stored only on your device and not synced anywhere by default.</p>
+            <div class="meta">
+              <span class="tag safe">Local only</span>
+              <span class="tag">Persistent</span>
+              <span class="tag">User clearable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="storage-item">
+          <div class="storage-icon">☁️</div>
+          <div class="storage-info">
+            <p class="name"><code>chrome.storage.sync</code></p>
+            <p class="desc">Optionally syncs a subset of your preferences (e.g., theme, language) across devices if you are signed in to Chrome and sync is enabled. Only non-sensitive preferences are synced — never document content or financial data. Sync can be disabled in Chrome settings.</p>
+            <div class="meta">
+              <span class="tag">Synced via Google</span>
+              <span class="tag">Preferences only</span>
+              <span class="tag">User controllable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="storage-item">
+          <div class="storage-icon">⚡</div>
+          <div class="storage-info">
+            <p class="name"><code>chrome.storage.session</code></p>
+            <p class="desc">Temporary, in-memory storage used during active browser sessions to hold processing state (e.g., current tool context). Automatically cleared when the browser is closed.</p>
+            <div class="meta">
+              <span class="tag safe">Session only</span>
+              <span class="tag">Auto-cleared</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="storage-item">
+          <div class="storage-icon">🗄️</div>
+          <div class="storage-info">
+            <p class="name">IndexedDB / <code>localStorage</code> (extension context)</p>
+            <p class="desc">Used as a temporary processing cache when handling large documents (e.g., multi-page PDFs). Cached data consists only of the file currently being processed and is not retained after the processing session ends.</p>
+            <div class="meta">
+              <span class="tag safe">Processing cache only</span>
+              <span class="tag">User clearable</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Website Cookies -->
+    <section id="website-cookies">
+      <h2>Website Cookies (snaptoolapps.com)</h2>
+      <p>Our marketing website and web app may use the following types of cookies:</p>
+
+      <h3>Strictly Necessary</h3>
+      <p>Required for the website to function. These cannot be disabled. Examples: session authentication token, CSRF protection cookie, load balancer routing.</p>
+
+      <h3>Functional</h3>
+      <p>Remember your preferences such as language, theme, and region. These do not track you across third-party sites. You may disable these, but some features may not work correctly.</p>
+
+      <h3>Analytics</h3>
+      <p>If analytics are enabled, we may use privacy-respecting tools (e.g., Plausible or a self-hosted solution) that use no cookies and collect only aggregated, anonymized data such as page views and referrer information. No personal data or cross-site tracking is involved. We do not use Google Analytics or Meta Pixel.</p>
+
+      <h3>Marketing / Advertising</h3>
+      <p><strong>We do not use advertising cookies or tracking pixels on our website.</strong> We do not serve ads or participate in behavioral advertising networks.</p>
+
+      <div class="callout">
+        <span class="callout-icon">🍪</span>
+        <p>A cookie consent notice will be displayed on first visit to our website where required by applicable law (e.g., GDPR). Strictly necessary cookies are always active. You may opt out of functional and analytics cookies via the consent banner.</p>
+      </div>
+    </section>
+
+    <!-- What We Do NOT Do -->
+    <section id="no-tracking">
+      <h2>What We Do Not Do</h2>
+      <ul>
+        <li>❌ We do <strong>not</strong> read, write, or intercept cookies on websites you browse.</li>
+        <li>❌ We do <strong>not</strong> track your browsing history.</li>
+        <li>❌ We do <strong>not</strong> inject scripts into third-party web pages.</li>
+        <li>❌ We do <strong>not</strong> use advertising networks or sell cookie data.</li>
+        <li>❌ We do <strong>not</strong> use fingerprinting or canvas-based tracking techniques.</li>
+        <li>❌ We do <strong>not</strong> share storage data with external analytics platforms without anonymization.</li>
+      </ul>
+    </section>
+
+    <!-- Clearing Your Data -->
+    <section id="clearing">
+      <h2>How to Clear Extension Storage</h2>
+      <p>You have full control over all storage used by our extensions. To clear it:</p>
+
+      <h3>Google Chrome</h3>
+      <ol class="steps">
+        <li><span>Open Chrome and go to <strong>Settings → Privacy and security → Clear browsing data</strong>.</span></li>
+        <li><span>Select <strong>"All time"</strong> from the time range dropdown.</span></li>
+        <li><span>Check <strong>"Cached images and files"</strong> and/or <strong>"Cookies and other site data"</strong>.</span></li>
+        <li><span>Click <strong>"Clear data"</strong>. This will reset all extension storage including settings and license cache.</span></li>
+      </ol>
+
+      <h3>Uninstalling the Extension</h3>
+      <p>Uninstalling a SnapToolApps extension automatically removes all <code>chrome.storage.local</code> and IndexedDB data associated with it. Synced data in <code>chrome.storage.sync</code> may persist in your Google account until Chrome removes it after 30+ days of the extension being uninstalled.</p>
+
+      <h3>Account Deletion</h3>
+      <p>To delete your account and associated server-side data (if any), contact <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>. Local extension data must be cleared manually via the steps above.</p>
+    </section>
+
+    <!-- Third Party -->
+    <section id="third-party">
+      <h2>Third-Party Services</h2>
+      <p>SnapToolApps extensions do not embed third-party SDKs, advertising libraries, or social widgets that could set cookies in your browser.</p>
+      <p>If you purchase a Pro subscription, you interact directly with our payment processor (e.g., Stripe). Stripe may set cookies on its checkout pages in accordance with <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's own privacy policy</a>. We do not control those cookies.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Questions?</h2>
+      <p>If you have questions about cookies or local storage used by SnapToolApps products, please contact:</p>
+      <div class="callout">
+        <span class="callout-icon">✉️</span>
+        <p>
+          <strong>SnapTool Labs</strong> (a DBA of Redan Ventures LLC)<br />
+          [ENTITY_ADDRESS]<br />
+          Email: <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>
+        </p>
+      </div>
+      <p>Also see our full <a href="privacy-policy.html">Privacy Policy</a> for a comprehensive overview of how we handle your data.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:snap.tool.labs@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 SnapTool Labs (a DBA of Redan Ventures LLC). All rights reserved.</p>
+    <p>Last updated: February 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>

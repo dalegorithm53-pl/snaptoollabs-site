@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — SnapToolApps</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f7f7f8;
+      --border: #e5e5e7;
+      --text-primary: #111111;
+      --text-secondary: #555558;
+      --text-muted: #8a8a8e;
+      --accent: #5b6af9;
+      --accent-hover: #4455f0;
+      --accent-bg: #eef0ff;
+      --nav-bg: rgba(255,255,255,0.85);
+      --badge-bg: #f0f0f5;
+      --badge-text: #444450;
+      --warning-bg: #fff8ec;
+      --warning-border: #f59e0b;
+      --warning-text: #92400e;
+      --danger-bg: #fff1f2;
+      --danger-border: #f43f5e;
+      --danger-text: #881337;
+      --success-bg: #f0fdf4;
+      --success-border: #22c55e;
+      --success-text: #166534;
+      --radius: 10px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111113;
+        --bg-secondary: #1a1a1e;
+        --border: #2a2a2e;
+        --text-primary: #ededef;
+        --text-secondary: #a0a0a8;
+        --text-muted: #606068;
+        --accent: #7b8cff;
+        --accent-hover: #8f9fff;
+        --accent-bg: #1a1d3a;
+        --nav-bg: rgba(17,17,19,0.88);
+        --badge-bg: #222228;
+        --badge-text: #a0a0aa;
+        --warning-bg: #2a1f0a;
+        --warning-border: #d97706;
+        --warning-text: #fcd34d;
+        --danger-bg: #1f0a0e;
+        --danger-border: #e11d48;
+        --danger-text: #fca5a5;
+        --success-bg: #0a1f0e;
+        --success-border: #16a34a;
+        --success-text: #86efac;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand .logo-mark {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #5b6af9 0%, #9b6aff 100%);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent); font-weight: 500; }
+
+    .page-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 24px 100px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .page-wrapper {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 80px;
+        gap: 32px;
+      }
+    }
+
+    .toc {
+      position: sticky;
+      top: 72px;
+    }
+    .toc-title {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .toc-list { list-style: none; }
+    .toc-list li + li { margin-top: 2px; }
+    .toc-list a {
+      display: block;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s;
+      line-height: 1.45;
+    }
+    .toc-list a:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    @media (max-width: 720px) { .toc { display: none; } }
+
+    .doc-header { margin-bottom: 48px; }
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+    .doc-meta span { display: flex; align-items: center; gap: 5px; }
+
+    .content section {
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    .content section:first-of-type {
+      padding-top: 0;
+      border-top: none;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    p { color: var(--text-secondary); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol {
+      color: var(--text-secondary);
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text-primary); font-weight: 600; }
+
+    .callout {
+      display: flex;
+      gap: 14px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin: 20px 0;
+    }
+    .callout.warning {
+      background: var(--warning-bg);
+      border-color: var(--warning-border);
+      border-left-color: var(--warning-border);
+    }
+    .callout.warning p { color: var(--warning-text); }
+    .callout.danger {
+      background: var(--danger-bg);
+      border-color: var(--danger-border);
+      border-left-color: var(--danger-border);
+    }
+    .callout.danger p { color: var(--danger-text); }
+    .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.6; }
+    .callout p { margin: 0; font-size: 14px; }
+
+    /* Tier comparison */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 520px) { .tier-grid { grid-template-columns: 1fr; } }
+    .tier-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .tier-card.pro { border-color: var(--accent); }
+    .tier-header {
+      padding: 14px 18px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tier-card.pro .tier-header { background: var(--accent-bg); }
+    .tier-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .tier-card.pro .tier-name { color: var(--accent); }
+    .tier-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+    }
+    .tier-card.pro .tier-badge { background: var(--accent); color: #fff; }
+    .tier-body { padding: 14px 18px; }
+    .tier-body ul { margin: 0; padding-left: 16px; }
+    .tier-body li { font-size: 13.5px; color: var(--text-secondary); margin-bottom: 5px; }
+
+    /* Numbered list with custom counters */
+    .terms-list { list-style: none; padding: 0; counter-reset: terms-counter; }
+    .terms-list > li {
+      counter-increment: terms-counter;
+      padding: 12px 0 12px 42px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 14.5px;
+    }
+    .terms-list > li:last-child { border-bottom: none; }
+    .terms-list > li::before {
+      content: counter(terms-counter);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 26px;
+      height: 26px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+    footer p { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    footer p:last-child { margin-bottom: 0; }
+    footer a { color: var(--accent); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-links a { font-size: 13px; color: var(--text-secondary); }
+    .footer-links a:hover { color: var(--text-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">
+      <span class="logo-mark">S</span>
+      SnapToolApps
+    </a>
+    <ul class="nav-links">
+      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="terms-of-service.html" class="active">Terms</a></li>
+      <li><a href="cookie-policy.html">Cookies</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <!-- Sidebar TOC -->
+  <aside class="toc" aria-label="Table of contents">
+    <p class="toc-title">On this page</p>
+    <ul class="toc-list">
+      <li><a href="#agreement">Agreement to Terms</a></li>
+      <li><a href="#services">The Services</a></li>
+      <li><a href="#free-tier">Free Tier</a></li>
+      <li><a href="#pro-tier">Pro Subscription</a></li>
+      <li><a href="#accounts">Accounts</a></li>
+      <li><a href="#acceptable-use">Acceptable Use</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#indemnification">Indemnification</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#governing-law">Governing Law</a></li>
+      <li><a href="#changes">Changes to Terms</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content" id="main">
+    <header class="doc-header">
+      <div class="doc-badge">📄 Legal Document</div>
+      <h1>Terms of Service</h1>
+      <div class="doc-meta">
+        <span>📅 Last updated: February 2026</span>
+        <span>🏢 SnapTool Labs (a DBA of Redan Ventures LLC)</span>
+        <span>🌐 SnapToolApps</span>
+      </div>
+    </header>
+
+    <!-- Agreement -->
+    <section id="agreement">
+      <h2>Agreement to Terms</h2>
+      <div class="callout warning">
+        <span class="callout-icon">⚠️</span>
+        <p><strong>Please read these Terms carefully.</strong> By installing, accessing, or using any SnapToolApps product, you agree to be bound by these Terms of Service and our <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree, do not use the Services.</p>
+      </div>
+      <p>These Terms of Service ("Terms") govern your access to and use of the software products, browser extensions, websites, and related services (collectively, the "Services") provided by <strong>Redan Ventures LLC, doing business as SnapTool Labs</strong> ("SnapTool Labs," "we," "us," or "our"), located at <strong>[ENTITY_ADDRESS]</strong>.</p>
+      <p>These Terms apply to all users including visitors, free-tier users, and paying subscribers. If you are using the Services on behalf of a company or organization, you represent that you have authority to bind that entity to these Terms.</p>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>The Services</h2>
+      <p>SnapToolApps provides productivity-focused browser extensions and web tools, including (without limitation) tools for:</p>
+      <ul>
+        <li>Optical Character Recognition (OCR) — client-side text extraction from images and PDFs</li>
+        <li>PDF manipulation — merge, split, compress, and convert documents</li>
+        <li>Document utilities and format conversion</li>
+        <li>Other productivity extensions as released under the SnapToolApps brand</li>
+      </ul>
+      <p>We reserve the right to modify, suspend, or discontinue any part of the Services at any time, with or without notice. We will not be liable to you or any third party for such modifications.</p>
+    </section>
+
+    <!-- Free Tier -->
+    <section id="free-tier">
+      <h2>Free Tier</h2>
+      <p>We offer a free tier of the Services subject to the following limitations. Free tier terms may change at our discretion with reasonable notice.</p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-header">
+            <span class="tier-name">Free</span>
+            <span class="tier-badge">No cost</span>
+          </div>
+          <div class="tier-body">
+            <ul>
+              <li>Core features with usage limits</li>
+              <li>Limited monthly operations (e.g., OCR scans, PDF conversions)</li>
+              <li>Community support only</li>
+              <li>SnapToolApps branding may appear on outputs</li>
+              <li>No SLA or uptime guarantee</li>
+              <li>Features may be restricted or rotated</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tier-card pro">
+          <div class="tier-header">
+            <span class="tier-name">Pro</span>
+            <span class="tier-badge">Subscription</span>
+          </div>
+          <div class="tier-body">
+            <ul>
+              <li>Unlimited operations (fair use)</li>
+              <li>Priority email support</li>
+              <li>No branding on outputs</li>
+              <li>Early access to new features</li>
+              <li>Enhanced processing options</li>
+              <li>See Pro section for billing details</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p>Free tier usage is subject to fair-use limits. We reserve the right to throttle, pause, or revoke free access if we detect abuse, automated bulk usage, or usage that imposes unreasonable load on our infrastructure.</p>
+    </section>
+
+    <!-- Pro Tier -->
+    <section id="pro-tier">
+      <h2>Pro Subscription</h2>
+      <div class="callout">
+        <span class="callout-icon">🚧</span>
+        <p><strong>Coming soon.</strong> Pro subscription plans are currently in development. When launched, full pricing and subscription terms will be published here. The following terms apply to any paid plans we offer.</p>
+      </div>
+
+      <h3>Billing &amp; Payment</h3>
+      <p>Pro subscriptions are billed on a recurring basis (monthly or annually, as selected at purchase). Payments are processed by our third-party payment processor. By subscribing, you authorize us to charge the payment method you provide on each renewal date until you cancel.</p>
+      <p>All prices are listed in US Dollars and are exclusive of applicable taxes unless otherwise stated. We reserve the right to update pricing with at least 30 days' notice to existing subscribers before the next billing cycle.</p>
+      <p>For billing questions, contact <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>.</p>
+
+      <h3>Free Trials</h3>
+      <p>Where a free trial is offered, it begins on the date you enroll. At the end of the trial, you will automatically be charged the applicable subscription fee unless you cancel before the trial ends. Cancellation instructions are available in your account settings or by contacting support.</p>
+
+      <h3>Cancellation</h3>
+      <p>You may cancel your subscription at any time from your account settings or by contacting <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>. Cancellation takes effect at the end of the current billing period. You retain access to Pro features until the period ends. No refunds are issued for the unused portion of a billing period unless required by applicable law.</p>
+
+      <h3>Refunds</h3>
+      <p>We offer refunds within <strong>14 days</strong> of initial purchase if you are not satisfied and have not used the Services beyond de minimis evaluation. To request a refund, contact <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>. Refund eligibility for renewals is evaluated on a case-by-case basis. We comply with all mandatory refund requirements under applicable law.</p>
+
+      <h3>Subscription Changes</h3>
+      <p>Upgrades take effect immediately; downgrades take effect at the start of the next billing cycle. We do not provide partial-period credits for downgrades.</p>
+    </section>
+
+    <!-- Accounts -->
+    <section id="accounts">
+      <h2>Accounts</h2>
+      <p>Some features require creating an account. You agree to:</p>
+      <ul>
+        <li>Provide accurate and complete registration information.</li>
+        <li>Maintain the security of your account credentials and not share your password.</li>
+        <li>Promptly notify us of any unauthorized use at <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>.</li>
+        <li>Be responsible for all activity under your account.</li>
+      </ul>
+      <p>We reserve the right to refuse service, terminate accounts, or remove content at our sole discretion.</p>
+      <p>You may delete your account at any time. Upon deletion, your personal data will be handled in accordance with our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </section>
+
+    <!-- Acceptable Use -->
+    <section id="acceptable-use">
+      <h2>Acceptable Use</h2>
+      <p>You agree to use the Services only for lawful purposes and in a manner consistent with these Terms. You must not:</p>
+
+      <ul class="terms-list">
+        <li>Violate any applicable local, national, or international law or regulation.</li>
+        <li>Use the Services to process, store, transmit, or distribute content that is illegal, defamatory, fraudulent, obscene, or infringes third-party intellectual property rights.</li>
+        <li>Attempt to gain unauthorized access to any portion of the Services or related systems, networks, or infrastructure.</li>
+        <li>Reverse engineer, decompile, disassemble, or attempt to derive source code from the Services (except as permitted by applicable law).</li>
+        <li>Use automated scripts, bots, scrapers, or other tools to access or extract data from the Services at volumes that abuse or degrade performance for others.</li>
+        <li>Resell, sublicense, or commercialize the Services without our express written consent.</li>
+        <li>Impersonate any person or entity, or misrepresent your affiliation with a person or entity.</li>
+        <li>Transmit any unsolicited commercial communications or spam through or in connection with the Services.</li>
+        <li>Attempt to probe, scan, or test the vulnerability of our systems or networks.</li>
+        <li>Remove, alter, or obscure any proprietary notices or labels on the Services.</li>
+        <li>Use the Services in any manner that could damage, disable, overburden, or impair our servers or networks.</li>
+      </ul>
+
+      <p>We reserve the right to investigate violations and take appropriate action, including suspension or termination of access, without notice.</p>
+    </section>
+
+    <!-- Intellectual Property -->
+    <section id="ip">
+      <h2>Intellectual Property</h2>
+
+      <h3>Our IP</h3>
+      <p>The Services, including all software, code, designs, interfaces, trademarks, logos, and content created by Redan Ventures LLC, are owned by or licensed to us and protected by intellectual property laws. These Terms do not grant you ownership of any part of the Services.</p>
+      <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the Services solely for your own personal or internal business purposes, subject to these Terms.</p>
+
+      <h3>Your Content</h3>
+      <p>Any documents, files, or data you process using the Services remain your property. Because our core tools operate client-side, no document content is transmitted to us. You represent that you have all rights necessary to process any content you submit to or process with the Services.</p>
+
+      <h3>Feedback</h3>
+      <p>If you provide suggestions, ideas, or feedback about the Services ("Feedback"), you grant us a non-exclusive, royalty-free, perpetual, irrevocable license to use that Feedback to improve our products, without any obligation to you.</p>
+    </section>
+
+    <!-- Disclaimer -->
+    <section id="disclaimer">
+      <h2>Disclaimer of Warranties</h2>
+      <div class="callout warning">
+        <span class="callout-icon">⚠️</span>
+        <p><strong>The Services are provided "as is" and "as available" without warranties of any kind</strong>, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, accuracy, title, non-infringement, or that the Services will be uninterrupted or error-free.</p>
+      </div>
+      <p>We do not warrant that:</p>
+      <ul>
+        <li>The Services will meet your requirements or expectations.</li>
+        <li>Results obtained from using the Services (e.g., OCR accuracy, PDF output quality) will be accurate, complete, or reliable.</li>
+        <li>Any errors or defects will be corrected.</li>
+        <li>The Services or servers are free of viruses or other harmful components.</li>
+      </ul>
+      <p>Some jurisdictions do not allow the exclusion of implied warranties. In such jurisdictions, our liability is limited to the maximum extent permitted by law.</p>
+    </section>
+
+    <!-- Liability -->
+    <section id="liability">
+      <h2>Limitation of Liability</h2>
+      <div class="callout danger">
+        <span class="callout-icon">⛔</span>
+        <p><strong>To the fullest extent permitted by applicable law</strong>, in no event shall Redan Ventures LLC, its affiliates, officers, directors, employees, or licensors be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages — including lost profits, data loss, goodwill, or business interruption — arising out of or relating to your use of or inability to use the Services.</p>
+      </div>
+      <p>Our total cumulative liability arising out of or related to these Terms or the Services, regardless of the form of action or theory of liability, will not exceed the greater of:</p>
+      <ul>
+        <li><strong>The amounts you paid to us in the 12 months preceding the claim</strong>, or</li>
+        <li><strong>$50 USD</strong> if you have not made any payments to us.</li>
+      </ul>
+      <p>The limitations in this section apply even if we have been advised of the possibility of such damages. Some jurisdictions do not allow limitations on liability for consequential or incidental damages; in such cases, the above limitation may not apply to you.</p>
+    </section>
+
+    <!-- Indemnification -->
+    <section id="indemnification">
+      <h2>Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Redan Ventures LLC and its affiliates, officers, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to:</p>
+      <ul>
+        <li>Your violation of these Terms.</li>
+        <li>Your use of the Services in a manner not expressly authorized by these Terms.</li>
+        <li>Your violation of any third-party rights, including intellectual property rights or privacy rights.</li>
+        <li>Any content you process or submit in connection with the Services.</li>
+      </ul>
+    </section>
+
+    <!-- Termination -->
+    <section id="termination">
+      <h2>Termination</h2>
+
+      <h3>Termination by You</h3>
+      <p>You may stop using the Services at any time. To close your account, use the account settings or contact <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>. For paid subscriptions, cancellation stops future charges but does not entitle you to a refund for the current period (see Refunds above).</p>
+
+      <h3>Termination by Us</h3>
+      <p>We may suspend or terminate your access to the Services immediately, without prior notice or liability, for any reason, including if you:</p>
+      <ul>
+        <li>Breach any provision of these Terms.</li>
+        <li>Engage in conduct that we reasonably believe is harmful to other users, us, or third parties.</li>
+        <li>Are subject to legal proceedings that affect the Services.</li>
+      </ul>
+      <p>Upon termination for cause, we may delete your account data. If we terminate your access without cause, we will refund any prepaid subscription fees on a pro-rated basis.</p>
+
+      <h3>Effect of Termination</h3>
+      <p>Sections that by their nature should survive termination (including Intellectual Property, Disclaimer of Warranties, Limitation of Liability, Indemnification, and Governing Law) will continue to apply after termination.</p>
+    </section>
+
+    <!-- Governing Law -->
+    <section id="governing-law">
+      <h2>Governing Law &amp; Disputes</h2>
+      <p>These Terms are governed by and construed in accordance with the laws of <strong>[JURISDICTION — e.g., the State of Delaware, USA]</strong>, without regard to conflict-of-law principles. To the extent permitted by law, you and Redan Ventures LLC agree to submit to the personal and exclusive jurisdiction of the courts located in <strong>[VENUE]</strong> for any disputes arising from these Terms.</p>
+
+      <h3>Informal Resolution</h3>
+      <p>Before filing a formal dispute, you agree to first contact us at <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a> and give us 30 days to attempt informal resolution. Most concerns can be resolved this way.</p>
+
+      <h3>Class Action Waiver</h3>
+      <p>To the extent permitted by law, you and Redan Ventures LLC agree to resolve disputes individually and waive the right to participate in a class action, class arbitration, or representative proceeding.</p>
+
+      <h3>EU / UK Consumer Rights</h3>
+      <p>If you are a consumer in the European Union or United Kingdom, mandatory consumer protection laws in your jurisdiction apply and are not affected by these Terms. You may also use the EU Online Dispute Resolution platform at <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener">ec.europa.eu/odr</a>.</p>
+    </section>
+
+    <!-- Changes -->
+    <section id="changes">
+      <h2>Changes to These Terms</h2>
+      <p>We reserve the right to update these Terms at any time. When we make material changes, we will:</p>
+      <ul>
+        <li>Update the "Last updated" date at the top of this page.</li>
+        <li>Notify registered users by email and/or via an in-product notice at least <strong>14 days</strong> before the changes take effect.</li>
+        <li>For changes that materially increase your obligations or reduce your rights, we will request fresh acceptance where technically feasible.</li>
+      </ul>
+      <p>Your continued use of the Services after the effective date constitutes acceptance of the revised Terms. If you do not accept the updated Terms, you must stop using the Services before the effective date.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Questions about these Terms? We're here to help.</p>
+      <div class="callout">
+        <span class="callout-icon">✉️</span>
+        <p>
+          <strong>SnapTool Labs</strong> (a DBA of Redan Ventures LLC)<br />
+          [ENTITY_ADDRESS]<br />
+          Email: <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a>
+        </p>
+      </div>
+      <p>For legal notices and formal communications, please use the mailing address above. For general support, email is preferred.</p>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="mailto:snap.tool.labs@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 SnapTool Labs (a DBA of Redan Ventures LLC). All rights reserved.</p>
+    <p>Last updated: February 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
