@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — SnapText OCR</title>
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-light: #6366f1;
+      --bg: #ffffff;
+      --bg-secondary: #f8f9ff;
+      --text: #111827;
+      --text-secondary: #6b7280;
+      --border: #e5e7eb;
+      --accent-bg: #eef2ff;
+      --accent-border: #c7d2fe;
+      --green-bg: #f0fdf4;
+      --green-border: #bbf7d0;
+      --green-text: #15803d;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .header {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+      color: white;
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .header .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .header .tagline {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .header .updated {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 14px;
+      border-radius: 20px;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .tl-dr {
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .tl-dr h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-text);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .tl-dr ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tl-dr ul li {
+      padding: 4px 0;
+      padding-left: 26px;
+      position: relative;
+      color: var(--green-text);
+      font-weight: 500;
+    }
+    .tl-dr ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: #16a34a;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+    section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 20px 0 8px;
+    }
+    p {
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 12px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .callout {
+      background: var(--accent-bg);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .callout p {
+      margin: 0;
+      color: #3730a3;
+      font-weight: 500;
+    }
+    .permission-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.925rem;
+    }
+    .permission-table th {
+      background: var(--bg-secondary);
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .permission-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .permission-table tr:nth-child(even) td {
+      background: var(--bg-secondary);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--green-bg);
+      color: var(--green-text);
+      border: 1px solid var(--green-border);
+    }
+    .contact-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .contact-box p {
+      margin-bottom: 6px;
+    }
+    .contact-box strong {
+      color: var(--primary);
+    }
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.6rem; }
+      .container { padding: 32px 16px 60px; }
+      .permission-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-mark">📝</div>
+  <h1>Privacy Policy</h1>
+  <p class="tagline">SnapText OCR — Image to Text Extraction</p>
+  <span class="updated">Last updated: February 16, 2026</span>
+</header>
+
+<div class="container">
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <h2>TL;DR — The Short Version</h2>
+    <ul>
+      <li>We collect absolutely no personal data.</li>
+      <li>Your images never leave your device.</li>
+      <li>All OCR processing runs locally in your browser.</li>
+      <li>Scan history is stored only in Chrome's local storage, on your machine.</li>
+      <li>No servers, no analytics, no third-party trackers.</li>
+    </ul>
+  </div>
+
+  <!-- 1. Overview -->
+  <section>
+    <h2>1. Overview</h2>
+    <p>
+      This Privacy Policy describes how <strong>Redan Ventures LLC, doing business as SnapTool Labs</strong> ("we," "us," or "our") handles information in connection with the <strong>SnapText OCR</strong> Chrome extension ("the Extension," "SnapText").
+    </p>
+    <p>
+      We built SnapText with a foundational commitment: <strong>your data is yours</strong>. The Extension is engineered to operate entirely on your local device, with no data collection, no user accounts, and no external communications of any kind.
+    </p>
+  </section>
+
+  <!-- 2. Data We Do NOT Collect -->
+  <section>
+    <h2>2. Information We Do <em>Not</em> Collect</h2>
+    <p>SnapText does not collect, transmit, store on our servers, or share any of the following:</p>
+    <ul>
+      <li>Images you scan or process</li>
+      <li>Text extracted by the OCR engine</li>
+      <li>Your browsing history or visited URLs</li>
+      <li>Personal identifiers (name, email, IP address, device ID)</li>
+      <li>Usage analytics or telemetry</li>
+      <li>Crash reports or diagnostics</li>
+      <li>Any other data of any kind</li>
+    </ul>
+    <div class="callout">
+      <p>SnapText makes <strong>zero network requests</strong>. There is no server. There is no database. There is no analytics pipeline. We have no way to see your data — by design.</p>
+    </div>
+  </section>
+
+  <!-- 3. Local Storage -->
+  <section>
+    <h2>3. Data Stored Locally on Your Device</h2>
+    <p>SnapText uses Chrome's built-in <code>chrome.storage.local</code> API to save the following data <strong>on your machine only</strong>:</p>
+    <ul>
+      <li><strong>Scan history</strong> — The last 20 OCR results (text only, not the source images), stored so you can revisit recent extractions without re-scanning.</li>
+      <li><strong>Theme preference</strong> — Whether you've selected light or dark mode.</li>
+      <li><strong>Scan counter</strong> — A running count of scans performed today.</li>
+    </ul>
+    <p>
+      This data never leaves your browser. It is not synced to any cloud service (Chrome sync is not used). It can be cleared at any time by removing the Extension or clearing extension storage in Chrome's settings.
+    </p>
+  </section>
+
+  <!-- 4. OCR Processing -->
+  <section>
+    <h2>4. How OCR Processing Works</h2>
+    <p>
+      SnapText uses <strong>Tesseract.js</strong>, an open-source OCR library compiled to WebAssembly, which runs entirely inside your browser's JavaScript engine. This means:
+    </p>
+    <ul>
+      <li>Image data is processed in-memory, within the Extension's sandbox.</li>
+      <li>No image data is written to disk (beyond what your OS does for memory management).</li>
+      <li>No image data is sent to any external server, API, or service.</li>
+      <li>The OCR engine and language data (English) are bundled with the Extension and loaded locally.</li>
+    </ul>
+    <div class="callout">
+      <p>Even in environments with no internet connection, SnapText works perfectly — because it has never required internet access to function.</p>
+    </div>
+  </section>
+
+  <!-- 5. Permissions -->
+  <section>
+    <h2>5. Chrome Permissions Explained</h2>
+    <p>SnapText requests the following browser permissions. Here's exactly why each is needed:</p>
+    <table class="permission-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Why It's Needed</th>
+          <th>Data Accessed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>activeTab</code></td>
+          <td>Captures a screenshot of the visible browser area when you use the Area Selection tool.</td>
+          <td>Current tab's visible pixels only, processed locally and immediately discarded.</td>
+        </tr>
+        <tr>
+          <td><code>contextMenus</code></td>
+          <td>Adds "Extract Text with SnapText" to the right-click context menu on images.</td>
+          <td>No data accessed — only registers a menu item.</td>
+        </tr>
+        <tr>
+          <td><code>storage</code></td>
+          <td>Saves scan history, theme preference, and scan counter to local browser storage.</td>
+          <td>Stored locally only. Never transmitted externally.</td>
+        </tr>
+        <tr>
+          <td><code>clipboardRead</code></td>
+          <td>Reads images you paste into the popup via Ctrl+V or the Paste Image button.</td>
+          <td>Clipboard image data processed locally and immediately discarded after OCR. Clipboard text is never read.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>SnapText does <strong>not</strong> request permissions to read your browsing history, access all websites automatically, sync data, or communicate with external hosts.</p>
+  </section>
+
+  <!-- 6. Third-Party Services -->
+  <section>
+    <h2>6. Third-Party Services</h2>
+    <p>
+      SnapText uses the following open-source library, bundled <em>inside</em> the Extension package. No data is sent to the library authors:
+    </p>
+    <ul>
+      <li>
+        <strong>Tesseract.js</strong> — OCR engine running as WebAssembly in your browser.
+        License: Apache 2.0. Source: <a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">github.com/naptha/tesseract.js</a>
+      </li>
+    </ul>
+    <p>There are no analytics services, advertising networks, crash reporters, or any other third-party integrations.</p>
+  </section>
+
+  <!-- 7. Children -->
+  <section>
+    <h2>7. Children's Privacy</h2>
+    <p>
+      SnapText does not knowingly collect any information from anyone, including children under the age of 13. Since we collect no data whatsoever, no special provisions are required under COPPA or similar regulations.
+    </p>
+  </section>
+
+  <!-- 8. Security -->
+  <section>
+    <h2>8. Security</h2>
+    <p>
+      Because SnapText collects no data and makes no network requests, the attack surface is limited to your local device. The Extension follows Chrome's Manifest V3 security model, including a strict Content Security Policy that prevents code injection and unauthorized script execution.
+    </p>
+    <p>
+      If you discover a security vulnerability in SnapText, please report it responsibly by contacting us at the address below.
+    </p>
+  </section>
+
+  <!-- 9. Changes -->
+  <section>
+    <h2>9. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. If changes are material, we will update the "Last updated" date at the top of this page and, where feasible, provide notice through the Extension or the Chrome Web Store listing.
+    </p>
+    <p>
+      Our core commitment — that SnapText will never collect, transmit, or share your data — will not change.
+    </p>
+  </section>
+
+  <!-- 10. Contact -->
+  <section>
+    <h2>10. Contact</h2>
+    <p>If you have questions about this Privacy Policy or SnapText's data practices, please contact us via email:</p>
+    <div class="contact-box">
+      <p><strong>SnapText OCR</strong></p>
+      <p><strong>Redan Ventures LLC, doing business as SnapTool Labs</strong></p>
+      <p>Email: <a href="mailto:snap.tool.labs@gmail.com">snap.tool.labs@gmail.com</a></p>
+      <p>Chrome Web Store listing: <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener">SnapText OCR</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 Redan Ventures LLC, doing business as SnapTool Labs. SnapText OCR is provided as-is under the terms of the Chrome Web Store Developer Agreement.</p>
+  <p style="margin-top:8px;">
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+
+</body>
+</html>
